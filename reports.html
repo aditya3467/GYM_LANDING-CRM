@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - FitIndia</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .nav-active {
+            border-bottom: 3px solid #3B82F6;
+            color: #3B82F6;
+        }
+        .report-card:hover {
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto极狐-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="极狐-2xl font-bold text-blue-600">FitIndia</span>
+                </div>
+                <div class="flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                    <a href="trainers.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Trainers</a>
+                    <a href="classes.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Classes</a>
+                    <a href="payment.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Payment</a>
+                    <a href="reports.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium nav-active">Reports</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-8 px-4">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Analytics & Reports</h1>
+
+        <!-- Report Filters -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Date Range</label>
+                    <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Last 7 Days</option>
+                        <option>Last 30 Days</option>
+                        <option>Last 3 Months</option>
+                        <option>Last 6 Months</option>
+                        <option>Custom Range</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Report Type</label>
+                    <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Revenue Report</option>
+                        <option>Attendance Report</option>
+                        <option>Member Growth</option>
+                        <option>Class Performance</option>
+                        <option>Trainer Performance</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+                    <select class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>All Centers</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Chennai</option>
+                        <option>Hyderabad</option>
+                    </select>
+                </div>
+                <div class="flex items-end">
+                    <button class="w-full bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        <i data-feather="filter" class="w-4 h-4 inline mr-2"></i>Generate Report
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Key Metrics -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="report-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up">
+                <div class="text-center">
+                    <div class="p-3 bg-blue-100 rounded-full inline-block mb-4">
+                        <i data-feather="dollar-sign" class="text-blue-600 w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">₹1,24,500</h2>
+                    <p class="text-gray-600">Total Revenue</p>
+                    <p class="text-green-600 text-sm mt-1">+12.5% from last month</p>
+                </div>
+            </div>
+            
+            <div class="report-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-center">
+                    <div class="p-3 bg-green-100 rounded-full inline-block mb-4">
+                        <i data-feather="users" class="text-green-600 w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">156</h2>
+                    <p class="text-gray-600">Active Members</p>
+                    <p class="text-green-600 text-sm mt-1">+8 new members</p>
+                </div>
+            </div>
+            
+            <div class="report-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-center">
+                    <div class="p-3 bg-yellow-100 rounded-full inline-block mb-4">
+                        <i data-feather="activity" class="text-yellow-600 w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">78%</h2>
+                    <p class="text-gray-600">Average Attendance</p>
+                    <p class="text-green-600 text-sm mt-1">+5% from last week</p>
+                </div>
+            </div>
+            
+            <div class="report-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-center">
+                    <div class="p-3 bg-purple-100 rounded-full inline-block mb-4">
+                        <i data-feather="star" class="text-purple-600 w-6 h-6"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-gray-800">4.7/5</h2>
+                    <p class="text-gray-600">Average Rating</p>
+                    <p class="text-green-600 text-sm mt-1">+0.2 from last month</极狐>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+            <!-- Revenue Chart -->
+            <div class="bg-white rounded-lg shadow-md p-6" data-aos="fade-right">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Revenue Trend (Last 6 Months)</h2>
+                <canvas id="revenueChart" width="400" height="250"></canvas>
+            </div>
+            
+            <!-- Member Growth Chart -->
+            <div class="bg-white rounded-lg shadow-md p-6" data-aos="fade-left">
+                <h2 class="text-xl font-semibold text-gray-800 mb-4">Member Growth</h2>
+                <canvas id="memberChart" width="400" height="250"></canvas>
+            </div>
+        </div>
+
+        <!-- Top Performing Classes -->
+        <div class="bg-white rounded-lg shadow-md p-6 mb-8" data-aos="fade-up">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Top Performing Classes</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="border rounded-lg p-4">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="activity" class="text-blue-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Zumba Dance</h3>
+                            <p class="text-sm text-gray-600">Priya Sharma</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Attendance</span>
+                            <span class="font-medium">92%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Revenue</span>
+                            <span class="font-medium">₹45,000</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Rating</span>
+                            <span class="font-medium">4.9/5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border rounded-lg p-4">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="wind" class="text-green-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Yoga Basics</h3>
+                            <p class="text-sm text-gray-600">Rajesh Kumar</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Attendance</span>
+                            <span class="font-medium">88%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Revenue</span>
+                            <span class="font-medium">₹38,500</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Rating</span>
+                            <span class="font-medium">4.8/5</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="border rounded-lg p-4">
+                    <div class="flex items-center mb-3">
+                        <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center mr-3">
+                            <i data-feather="dumbbell" class="text-yellow-600"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold">Weight Training</h3>
+                            <p class="text-sm text-gray-600">Vikram Singh</极狐>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Attendance</span>
+                            <span class="font-medium">85%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-sm text-gray-600">Revenue</span>
+                            <span class="font-medium">₹32,000</span>
+                        </div>
+                        <极狐 class="flex justify-between">
+                            <span class="text-sm text-gray-600">Rating</span>
+                            <span class="font-medium">4.7/5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Export Options -->
+        <div class="bg-white rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Export Reports</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                    <i data-feather="download" class="w-5 h-5 inline mr-2"></i>PDF Report
+                </button>
+                <button class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors">
+                    <i data-feather="file-text" class="w-5 h-5 inline mr-2"></i>Excel Export
+                </button>
+                <button class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors">
+                    <i data-feather="bar-chart-2" class="w-5 h-5 inline mr-2"></i>CSV Data
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+        feather.replace();
+        
+        // Revenue Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Revenue (₹)',
+                    data: [85000, 92000, 105000, 98000, 112000, 124500],
+                    borderColor: '#3B82F6',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    tension: 0.4,
+                    fill: true
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        // Member Growth Chart
+        const memberCtx = document.getElementById('memberChart').getContext('2d');
+        new Chart(memberCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'Active Members',
+                    data: [120, 128, 135, 142, 148, 156],
+                    backgroundColor: '#10B981',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

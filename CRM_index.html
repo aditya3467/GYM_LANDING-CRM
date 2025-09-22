@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Management System</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        .nav-active {
+            border-bottom: 3px solid #3B82F6;
+            color: #3B82F6;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-blue-600">FitIndia</span>
+                </div>
+                <div class="flex space-x-8 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium nav-active">Dashboard</a>
+                    <a href="trainers.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Trainers</a>
+                    <a href="classes.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Classes</a>
+                    <a href="payment.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Payment</a>
+                    <a href="reports.html" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Reports</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto py-8 px-4">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Dashboard Overview</h1>
+        
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="dashboard-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up">
+                <div class="flex items-center">
+                    <div class="p-3 bg-blue-100 rounded-full">
+                        <i data-feather="users" class="text-blue-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h2 class="text-2xl font-bold text-gray-800">24</h2>
+                        <p class="text-gray-600">Active Trainers</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center">
+                    <div class="p-3 bg-green-100 rounded-full">
+                        <i data-feather="calendar" class="text-green-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h2 class="text-2xl font-bold text-gray-800">18</h2>
+                        <p class="text-gray-600">Ongoing Classes</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center">
+                    <div class="p-3 bg-yellow-100 rounded-full">
+                        <i data-feather="dollar-sign" class="text-yellow-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h2 class="text-2xl font-bold text-gray-800">₹1,24,500</h2>
+                        <p class="text-gray-600">Monthly Revenue</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="dashboard-card bg-white rounded-lg shadow-md p-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="flex items-center">
+                    <div class="p-3 bg-purple-100 rounded-full">
+                        <i data-feather="trending-up" class="text-purple-600"></i>
+                    </div>
+                    <div class="ml-4">
+                        <h2 class="text-2xl font-bold text-gray-800">89%</h2>
+                        <p class="text-gray-600">Member Retention</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <a href="trainers.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow" data-aos="zoom-in">
+                <div class="text-center">
+                    <div class="p-3 bg-blue-100 rounded-full inline-block mb-4">
+                        <i data-feather="user-plus" class="text-blue-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Manage Trainers</h3>
+                    <p class="text-gray-600">View and manage all fitness trainers</p>
+                </div>
+            </a>
+            
+            <a href="classes.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow" data-aos="zoom-in" data-aos-delay="100">
+                <div class="text-center">
+                    <div class="p-3 bg-green-100 rounded-full inline-block mb-4">
+                        <i data-feather="activity" class="text-green-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Class Schedule</h3>
+                    <p class="text-gray-600">Check and update class timings</p>
+                </div>
+            </a>
+            
+            <a href="payment.html" class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow" data-aos="zoom-in" data-aos-delay="200">
+                <div class="text-center">
+                    <div class="p-3 bg-yellow-100 rounded-full inline-block mb-4">
+                        <i data-feather="credit-card" class="text-yellow-600 w-8 h-8"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Payment Records</h3>
+                    <p class="text-gray-600">View payment history and records</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        AOS.init();
+        feather.replace();
+    </script>
+</body>
+</html>
